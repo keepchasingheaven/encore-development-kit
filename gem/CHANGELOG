@@ -1,0 +1,40 @@
+v0.2.17
+
+- adição de dependências de telemetria
+
+v0.2.7 ... v0.2.16
+
+- ???
+
+v0.2.6
+
+- adição de versão ruby necessária para gemspec
+
+v0.2.5
+
+- adição de suporte experimental para puma em encore rails
+- avisar usuário caso ele não esteja utilizando a versão ruby apropriada durante instalação de edk
+- adição de sub-comando 'edk env'
+- adição de suporte para encore-pages
+- adição de suporte para execução de rails 5
+
+v0.2.4
+
+- melhores hints ao rodar fora do root edk
+
+v0.2.3
+
+- relembrar diretório de instalação durante 'edk init'
+
+v0.2.2
+
+- adição de comando 'edk version'
+
+v0.2.1
+
+- confiança de diretório automática após 'edk init'
+
+v0.2.0
+
+- correção de comando clone (utiliza a branch padrão)
+- adição de configuração de dotfile trusted_directories
