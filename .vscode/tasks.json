@@ -1,0 +1,22 @@
+{
+	"version": "2.0.0",
+
+	"tasks": [
+		{
+			"label": "enviar telemetria para setup de workspace",
+			"type": "shell",
+			"command": "support/encore-remote-development/send_telemetry.rb",
+			
+			"presentation": {
+				"echo": true,
+
+				"reveal": "always"
+			},
+
+			"runOptions": {
+				"reevaluateOnRerun": true,
+				"runOn": "folderOpen"
+			}
+		}
+	]
+}
