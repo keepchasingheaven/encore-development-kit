@@ -1,0 +1,12 @@
+# code owners - https://docs.encore.com/ee/user/project/code_owners.html
+
+[Maintainers]
+* @encore/maintainers/encore-development-kit
+.ruby-version @encore/maintainers/encore-development-kit @cvssn
+.tool-versions* @encore/maintainers/encore-development-kit @cvssn
+/doc/ @encore/maintainers/encore-development-kit @encore/maintainers/encore-development-kit/documentation
+README.md @encore/maintainers/encore-development-kit @encore/maintainers/encore-development-kit/documentation
+/support/edk-in-a-box/ @leetickett-encore @encore/maintainers/encore-development-kit
+/.encore/analytics/ @leetickett-encore @encore/maintainers/encore-development-kit
+ENCORE_HTTP_ROUTER_VERSION @encore-com/nc-infra/tenant-scale/cells-infrastructure @encore/maintainers/encore-development-kit
+ENCORE_TOPOLOGY_SERVICE_VERSION @encore-com/nc-infra/tenant-scale/cells-infrastructure @encore/maintainers/encore-development-kit
