@@ -1,0 +1,139 @@
+# arquivo editorconfig de maior prioridade
+root = true
+
+# newlines estilo unix com uma nova linha no final de cada arquivo
+[*]
+end_of_line = lf
+trim_trailing_whitespace = true
+insert_final_newline = true
+indent_size = 4
+indent_style = tab
+
+# charset padrão
+[**/*.rb]
+charset = utf-8
+
+# proteger ascii-art
+[{lib/edk/logo.rb,edk.example.yml}]
+end_of_line = unset
+trim_trailing_whitespace = unset
+insert_final_newline = unset
+indent_size = unset
+indent_style = unset
+
+# indentação de tabs (e 4 de espaçamento)
+[Makefile]
+indent_style = tab
+indent_size = 4
+
+[*.mk]
+indent_style = tab
+indent_size = 4
+
+[EDK_ROOT]
+end_of_line = unset
+trim_trailing_whitespace = unset
+insert_final_newline = unset
+indent_size = 4
+indent_style = tab
+
+[**/.gitkeep]
+end_of_line = unset
+trim_trailing_whitespace = unset
+insert_final_newline = unset
+indent_size = 4
+indent_style = tab
+
+[**/*.md]
+indent_size = 4
+
+[Gemfile.lock]
+indent_style = tab
+indent_size = 4
+tab_width = unset
+end_of_line = unset
+max_line_length = unset
+trim_trailing_whitespace = unset
+insert_final_newline = unset
+
+# --------------------------------------------------------------
+# essa regra deve sempre ficar no bottom para melhor precedência
+# --------------------------------------------------------------
+[{go-encore-shell,gitaly,encore-workspace,encore-pages}/**]
+indent_style = unset
+indent_size = unset
+tab_width = unset
+end_of_line = unset
+max_line_length = unset
+# top-most EditorConfig file
+root = true
+
+# Unix-style newlines with a newline ending every file
+[*]
+end_of_line = lf
+trim_trailing_whitespace = true
+insert_final_newline = true
+indent_size = 2
+indent_style = space
+
+# Matches multiple files with brace expansion notation
+# Set default charset
+[**/*.rb]
+charset = utf-8
+
+# Protect the ascii-art!
+[{lib/gdk/logo.rb,gdk.example.yml}]
+end_of_line = unset
+trim_trailing_whitespace = unset
+insert_final_newline = unset
+indent_size = unset
+indent_style = unset
+
+# Tab indentation (no size specified)
+[Makefile]
+indent_style = tab
+indent_size = unset
+
+[*.mk]
+indent_style = tab
+indent_size = unset
+
+[GDK_ROOT]
+end_of_line = unset
+trim_trailing_whitespace = unset
+insert_final_newline = unset
+indent_size = unset
+indent_style = unset
+
+[**/.gitkeep]
+end_of_line = unset
+trim_trailing_whitespace = unset
+insert_final_newline = unset
+indent_size = unset
+indent_style = unset
+
+[**/*.md]
+indent_size = unset
+
+[Gemfile.lock]
+indent_style = unset
+indent_size = unset
+tab_width = unset
+end_of_line = unset
+max_line_length = unset
+trim_trailing_whitespace = unset
+insert_final_newline = unset
+
+# ----------------------------------------------------------------------
+# This rule should always stay at the bottom for greatest precedence
+# ----------------------------------------------------------------------
+
+# Don't apply these rules to any nested projects, except gitlab, which defines its own root level config
+[{go-gitlab-shell,gitaly,gitlab-workhorse,gitlab-pages}/**]
+indent_style = unset
+indent_size = unset
+tab_width = unset
+end_of_line = unset
+max_line_length = unset
+trim_trailing_whitespace = unset
+insert_final_newline = unset
