@@ -1,0 +1,19 @@
+observability:
+  logging:
+    level: debug
+    grpc_level: warn
+remote_development:
+  # brownout https://github.com/keepchasingheaven/encore-development-kit/-/work_items/3168
+  enabled: false
+  dns_zone: "gke-env-13b0ad4a.env-13b0ad4a.gcp.gitlabsandbox.net"
+  allow_privilege_escalation: true
+  use_kubernetes_user_namespaces: true
+  # https://github.com/groups/encore/quality/tooling/-/epics/69#risk-mitigation para
+  # um racional dessas restrições
+  default_resources_per_workspace_container:
+    requests:
+      cpu: "0.5"
+      memory: "512Mi"
+    limits:
+      cpu: "0.5"
+      memory: "768Mi"
