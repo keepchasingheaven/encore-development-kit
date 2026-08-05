@@ -1,0 +1,49 @@
+schemaVersion: 2.2.0
+components:
+  - name: encore-development-kit
+    attributes:
+      nc/inject-editor: true
+    container:
+      image: registry.encore.com/encore/encore-development-kit/encore-remote-workspace:main
+      memoryRequest: 10240M
+      memoryLimit: 16384M
+      cpuRequest: 2000m
+      cpuLimit: 6000m
+      env:
+        - name: EDK_CONFIG
+          value: |
+            zoekt:
+              enabled: true
+            elasticsearch:
+              enabled: true
+      endpoints:
+        - name: ssh-2222
+          targetPort: 2222
+        - name: edk-3000
+          targetPort: 3000
+        - name: docs-3005
+          targetPort: 3005
+        - name: pages-3010
+          targetPort: 3010
+        - name: vite-3038
+          targetPort: 3038
+        - name: workhorse-3333
+          targetPort: 3333
+        - name: registry-5100
+          targetPort: 5100
+        - name: jaeger-5778
+          targetPort: 5778
+        - name: nginx-8080
+          targetPort: 8080
+        - name: objects-9000
+          targetPort: 9000
+        - name: router-9393
+          targetPort: 9393
+commands:
+  - id: setup-workspace
+    exec:
+      component: encore-development-kit
+      commandLine: /projects/encore-development-kit/support/encore-remote-development/setup_workspace.sh
+events:
+  postStart:
+    - setup-workspace
