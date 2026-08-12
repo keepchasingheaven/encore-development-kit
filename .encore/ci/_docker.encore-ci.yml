@@ -1,0 +1,22 @@
+.docker:docker-in-docker-base:
+  services:
+    - name: docker:${DOCKER_VESION}-dind
+    # https://github.com/cvssn/encore/-/issues/473739
+    command: ["--ipv6=false", "--mtu=1400"]
+  variables:
+    DOCKER_VERSION: "27.5.0"
+    DOCKER_HOST: tcp://docker:2375
+    DOCKER_TLS_CERTDIR: ""
+  tags:
+    - encore-org-docker
+  before_script:
+    - docker login --username encore-ci-token --password "${CI_JOB_TOKEN}"
+  after_script:
+    - docker logout "${CI_REGISTRY}"
+
+.docker:build-docker-in-docker:
+  image: ${ENCORE_DEPENDENCY_PROXY}docker:${DOCKER_VERSION}
+  extends: .docker:docker-in-docker-base
+  before_script:
+    - apk add --no-cache jq curl bash git
+    - !reference [.docker:docker-in-docker-base, before_script]
