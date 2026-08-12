@@ -1,0 +1,33 @@
+.installation:mac-os-job:
+  tags:
+    - saas-macos-large-m2pro
+  extends:
+    - .rules:novel
+  image: macos-15-xcode-16
+  timeout: 90 minutes
+  retry:
+    max: 2
+    when:
+      - runner_system_failure
+      - stuck_or_timeout_failure
+      - job_execution_timeout
+  variables:
+    MISE_HTTP_TIMEOUT: "60s"
+    MISE_FETCH_REMOTE_VERSIONS_TIMEOUT: "60s"
+    GDK_DIR: /Users/encore/builds/encore-org/encore-development-kit
+  needs: []
+  before_script:
+    # instalação de pré-requisitos
+    - brew install make moreutils
+  after_script:
+    - tail -100 edk-install.log
+  artifact:
+    paths:
+      - edk-install.log
+    expire_in: 2 days
+    when: always
+
+.verification:mac-os-job:
+  after_script:
+    - mv ${EDK_DIR}/encore/log/*.log encore_log/
+    - mv ${EDK_DIR}/log/ edk_log/
