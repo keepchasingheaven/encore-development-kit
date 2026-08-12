@@ -1,0 +1,5 @@
+# configuração para inclusão condicional para fazer
+# todos os jobs serem interruptíveis
+
+default:
+  interruptible: true
