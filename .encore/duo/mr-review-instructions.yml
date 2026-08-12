@@ -1,0 +1,6 @@
+instructions:
+  - name: 'testes smoke de componente'
+    fileFilters:
+      - 'components/*/EDK.rb'
+    instructions: |
+      1. estado criado em testes smoke (em blocos `smoke_test`) não precisa ser restaurado porque o teste apenas roda em jobs ci isolados.
